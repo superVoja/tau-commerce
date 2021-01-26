@@ -1,0 +1,16 @@
+.back-top {
+  position: fixed;
+  bottom: 56px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background-color: $blue-2;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+}

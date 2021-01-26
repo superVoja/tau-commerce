@@ -1,0 +1,88 @@
+.product-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  margin-top: 60px;
+
+  @include respond-to("large") {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  p {
+    font-size: 16px;
+    color: $dark-gray;
+    align-self: center;
+    margin-top: 10px;
+
+    @include respond-to("large") {
+      margin-top: 0;
+    }
+  }
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  justify-content: center;
+  position: relative;
+  span {
+    font-size: 16px;
+    color: $dark-gray;
+  }
+
+  .dropdown-btn {
+    width: 174px;
+    margin-left: 20px;
+    padding: 9px 15px;
+    color: $dark-gray;
+    outline: none;
+    cursor: pointer;
+
+    display: inline-block;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $dark-gray;
+    border-radius: 5px;
+    background: $base-color;
+
+    img {
+      margin-left: 59px;
+    }
+  }
+
+  .dropdown-content {
+    width: 174px;
+    height: 176px;
+    position: absolute;
+    top: 53px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 1) 0% 0% no-repeat padding-box;
+    border: 1px solid rgba(132, 91, 179, 1);
+    border-radius: 5px;
+    justify-content: center;
+    padding: 13px 0;
+    list-style: none;
+    z-index: 10;
+
+    display: none; /*Dropdown filter not showing by default*/
+    li {
+      padding: 7px 33px 7px 20px;
+
+      a {
+        text-decoration: none;
+        color: $dark-gray;
+        text-align: left;
+      }
+
+      &:hover {
+        background: rgba($color: $dark-gray, $alpha: 0.1);
+      }
+    }
+  }
+}

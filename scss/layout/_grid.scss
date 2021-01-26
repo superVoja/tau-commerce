@@ -1,0 +1,15 @@
+.product-grid {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+
+  @include respond-to("medium") {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond-to("large") {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 30px;
+    grid-gap: 30px;
+  }
+}

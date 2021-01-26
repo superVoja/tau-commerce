@@ -1,0 +1,44 @@
+// Variables
+@import "abstract/variables";
+@import "abstract/mixins";
+
+// Global
+@import "base/reset";
+
+// Layout
+@import "layout/header";
+@import "layout/hero";
+@import "layout/sidebar";
+@import "layout/grid";
+@import "layout/footer";
+
+// Components
+@import "components/buttons";
+@import "components/breadcrumb";
+@import "components/checkbox";
+@import "components/slider";
+@import "components/dropdown";
+@import "components/card";
+@import "components/carousel";
+
+body {
+  font-family: $sans-serif;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond-to("large") {
+    width: 1170px;
+  }
+}
+.product-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+
+  margin-top: 30px;
+  @include respond-to("large") {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    display: inline;
+
+    a {
+      color: $dark-blue;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    &::before {
+      content: "\2015";
+      color: $dark-gray;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+    &:first-child::before {
+      content: "";
+      margin-right: 0;
+      margin-left: 0;
+    }
+    &:last-child {
+      a {
+        text-decoration: none;
+        color: $dark-gray;
+        font-weight: normal;
+      }
+    }
+  }
+}

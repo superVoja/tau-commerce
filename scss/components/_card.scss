@@ -1,0 +1,120 @@
+@mixin sale($price, $discount, $top) {
+  .card-content {
+    span {
+      color: $purple;
+
+      &::after {
+        content: "$" + $price;
+        color: $dark-blue;
+        text-decoration: line-through;
+        font-size: 16px;
+        font-weight: 700;
+        margin-left: 10px;
+      }
+    }
+  }
+  .card-img {
+    position: relative;
+    &::after {
+      content: $discount + "%";
+      width: 42px;
+      height: 42px;
+      background-color: $blue-2;
+      color: $base-color;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 50%;
+      position: absolute;
+      top: $top;
+      right: 8px;
+    }
+  }
+}
+
+@mixin new {
+  .card-img {
+    &::before {
+      content: "Novo";
+      width: 42px;
+      height: 42px;
+      background-color: $purple;
+      color: $base-color;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 50%;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+}
+
+.card {
+  width: 270px;
+  height: 441px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 35px #13203b26;
+  border-radius: 15px;
+  cursor: pointer;
+  @include respond-to("large") {
+    margin-top: 0;
+  }
+  .card-img {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 15px 15px 0px 0px;
+    padding: 13px 24px;
+  }
+
+  .card-content {
+    border-top: 1px solid $blue-1;
+    padding: 20px;
+    p {
+      font-size: 14px;
+      color: $dark-gray;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h2 {
+      font-size: 16px;
+      color: $dark-blue;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    span {
+      font-size: 24px;
+      color: $dark-blue;
+      font-weight: 900;
+    }
+    .like-btn {
+      border: none;
+      cursor: pointer;
+      outline: none;
+
+      width: 21px;
+      height: 20px;
+      background: $base-color;
+
+      &:hover .a {
+        fill: $purple;
+      }
+    }
+  }
+  &:nth-child(3n + 2) {
+    @include sale(199.99, 25, 8px);
+  }
+  &:nth-child(3n) {
+    @include sale(99.99, 45, 58px);
+    @include new;
+  }
+}

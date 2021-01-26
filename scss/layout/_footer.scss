@@ -1,0 +1,70 @@
+footer {
+  margin-top: 80px;
+  background: $dark-blue;
+  color: $gray-4;
+
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    //justify-content: center;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    @include respond-to("large") {
+      width: 1170px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  ul {
+    &[title]::before {
+      content: attr(title);
+
+      display: block;
+      font-weight: 700;
+      color: $base-color;
+      font-size: 18px;
+      margin-bottom: 30px;
+      margin-top: 22px;
+    }
+    li {
+      margin-bottom: 16px;
+      a {
+        color: $base-color;
+
+        &::before {
+          display: block;
+          content: attr(title);
+          font-weight: bold;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+        }
+
+        &:hover {
+          font-weight: 700;
+        }
+        &:hover .b {
+          fill: $base-color;
+        }
+      }
+    }
+  }
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-3;
+
+    span {
+      padding: 10px 0;
+      font-size: 12px;
+      color: $base-color;
+    }
+  }
+}
